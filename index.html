@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link rel="stylesheet" href="time.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Carattere&family=Gemunu+Libre&family=Gluten&family=Koh+Santepheap&family=Lobster&family=Nanum+Gothic+Coding&family=Roboto&family=Roboto+Mono&family=Stick+No+Bills&display=swap"
+        rel="stylesheet">
+    <title>Time</title>
+
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0%;
+            padding: 0%;
+            background-color: black;
+            /* color: cornsilk; */
+            color: #ebffdce8;
+            font-family: 'Stick No Bills', sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+
+        #container {
+            /* border: 1px solid white; */
+            width: 80%;
+            height: 100%;
+            margin: 10% 10% 4% 10%;
+        }
+
+        #time_seconds {
+            text-align: center;
+        }
+
+        #day_date_month_year {
+            text-align: center;
+        }
+
+        #hours,
+        #colon,
+        #minutes {
+            font-weight: bolder;
+            font-size: 1200%;
+        }
+
+        #seconds {
+            font-size: 400%;
+        }
+
+        #milliseconds {
+            font-size: 133.334%;
+        }
+
+        #day_date_month_year {
+            font-size: 300%;
+        }
+
+
+        #below {
+            /* border: 1px solid white; */
+            margin: 0% 10% 10% 10%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #below img {
+            height: 23px;
+            /* background-color: #ebffdce8; */
+        }
+
+        #below button {
+            border-radius: 15px;
+            /* border: 1px solid white; */
+            margin: 30px;
+            background-color: rgb(66 66 66 / 72%);
+            /*needs change*/
+        }
+
+        /*font-family: 'Stick No Bills', sans-serif;
+ font-family: 'Abril Fatface', cursive;
+font-family: Carattere, cursive;
+font-family: Gemunu Libre, sans-serif;
+font-family: Gluten, cursive;
+font-family: Koh Santepheap, cursive;
+font-family: Lobster, cursive;
+font-family: Nanum Gothic Coding, monospace;
+font-family: Roboto, sans-serif;
+font-family: Roboto Mono, monospace; */
+
+        /* body{
+    background-color: #ebffdc;
+    background-color: #ff4a4a;
+    background-color: #fcff4a;
+    background-color: #b1ff4a;
+    background-color: #4affe7;
+    background-color: #ff4aff;
+} */
+    </style>
+</head>
+
+<body>
+    <div id="body" style="border: 1px solid black;">
+        <div id="container">
+            <div id="time_seconds">
+                <span id="hours"></span>
+
+                <span id="colon">:</span>
+
+                <span id="minutes"></span>
+
+                <span id="seconds"></span>
+
+                <span id="milliseconds"></span>
+            </div>
+
+            <div id="day_date_month_year">
+                <span id="day"></span>
+
+                <span id="date"></span>
+
+                <span id="month"></span>
+
+                <span id="year"></span>
+            </div>
+        </div>
+
+        <div id="below">
+            <button id="format" onclick="togglea()"><img src="assets\exchange.png"></button>
+
+            <button id="font" onclick="toggleb()"><img src="assets\text-font.png"></button>
+
+            <button id="color" onclick="togglec()"><img src="assets\color-palette.png"></button>
+
+            <button id="background" onclick="toggled()"><img src="assets\flat-screen-monitor.png"></button>
+
+            <button id="background" onclick="togglee()"><img src="assets\hide.png"></button>
+        </div>
+    </div>
+
+    <!-- <script src="time.js"></script> -->
+    <script>
+        a = false;
+        b = 0;
+        c = 0;
+        d = 0;
+
+        setInterval(qwerty, 1);
+
+        function togglea() {
+            if (a == false) {
+                a = true;
+                // console.log(a);
+            }
+            else {
+                a = false;
+                // console.log(a);
+            }
+        }
+
+        function toggleb() {
+            let temp = document.getElementById('container');
+            {
+                if (b >= 0 && b < 9) {
+                    b++;
+                }
+                else if (b == 9) {
+                    b = 0;
+                }
+            }
+            if (b == 0) { temp.style.fontFamily = 'Stick No Bills' }
+            else if (b == 1) { temp.style.fontFamily = 'Abril Fatface, cursive' }
+            else if (b == 2) { temp.style.fontFamily = 'Carattere, cursive' }
+            else if (b == 3) { temp.style.fontFamily = 'Gemunu Libre, sans-serif' }
+            else if (b == 4) { temp.style.fontFamily = 'Gluten, cursive' }
+            else if (b == 5) { temp.style.fontFamily = 'Koh Santepheap, cursive' }
+            else if (b == 6) { temp.style.fontFamily = 'Lobster, cursive' }
+            else if (b == 7) { temp.style.fontFamily = 'Nanum Gothic Coding, monospace' }
+            else if (b == 8) { temp.style.fontFamily = 'Roboto, sans-serif' }
+            else if (b == 9) { temp.style.fontFamily = 'Roboto Mono, monospace' }
+        }
+
+        function togglec() {
+            let temp2 = document.getElementById('container');
+            {
+                if (c >= 0 && c < 6) {
+                    c++;
+                }
+                else if (c == 6) {
+                    c = 0;
+                }
+            }
+            if (c == 0) { temp2.style.color = '#ebffdce8' }
+            else if (c == 1) { temp2.style.color = '#ff4a4ae8' }
+            else if (c == 2) { temp2.style.color = '#fcff4ae8' }
+            else if (c == 3) { temp2.style.color = '#b1ff4ae8' }
+            else if (c == 4) { temp2.style.color = '#4affe7e8' }
+            else if (c == 5) { temp2.style.color = '#ff4affe8' }
+            else if (c == 6) { temp2.style.color = 'black' }
+        }
+
+
+        function toggled() {
+            let temp3 = document.getElementById('body');
+            console.log(temp3)
+            {
+                if (d >= 0 && d < 6) {
+                    d++;
+                }
+                else if (d == 6) {
+                    d = 0;
+                }
+            }
+            if (d == 0) { temp3.style.backgroundColor = 'black' }
+            else if (d == 1) { temp3.style.backgroundColor = '#ff4aff' }
+            else if (d == 2) { temp3.style.backgroundColor = '#4affe7' }
+            else if (d == 3) { temp3.style.backgroundColor = '#b1ff4a' }
+            else if (d == 4) { temp3.style.backgroundColor = '#fcff4a' }
+            else if (d == 5) { temp3.style.backgroundColor = '#ff4a4a' }
+            else if (d == 6) { temp3.style.backgroundColor = '#ebffdc' }
+        }
+
+        function togglee() {
+            let temp4 = document.getElementById('milliseconds');
+            if (temp4.style.display != 'none') {
+                temp4.style.display = 'none';
+            }
+            else {
+                temp4.style.display = 'inline';
+            }
+        }
+
+
+        function qwerty() {
+            let time = new Date();
+
+            if (a == false) {
+                document.getElementById('hours').innerHTML = time.getHours();
+            }
+            else {
+                if (time.getHours <= 12) {
+                    document.getElementById('hours').innerHTML = time.getHours();
+                }
+
+                else {
+                    document.getElementById('hours').innerHTML = time.getHours() - 12;
+                }
+            }
+
+            document.getElementById('minutes').innerHTML = time.getMinutes();
+
+            document.getElementById('seconds').innerHTML = time.getSeconds();
+
+            document.getElementById('milliseconds').innerHTML = time.getMilliseconds();
+
+            alldays = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            document.getElementById('day').innerHTML = alldays[time.getDay() ];
+
+            document.getElementById('date').innerHTML = time.getDate();
+
+            allmonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            document.getElementById('month').innerHTML = allmonths[time.getMonth()];
+
+            document.getElementById('year').innerHTML = time.getFullYear();
+
+        }
+    </script>
+</body>
+
+</html>
